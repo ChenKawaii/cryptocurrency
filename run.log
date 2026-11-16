@@ -14,3 +14,357 @@ Recent prices for bitcoin:
 Recent prices for ethereum:
   2026-11-11 16:55:06 - $2,057.86
   2026-11-11 14:27:44 - $2,063.62
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1007, in request
+    response = self._client.send(
+        request,
+        stream=stream or self._should_stream_response_body(request=request),
+        **kwargs,
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\anaconda3\envs\env1\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\admin\Desktop\czy_proj\py\cryptocurrency\get_price.py", line 67, in <module>
+    fetch_and_store()
+    ~~~~~~~~~~~~~~~^^
+  File "c:\Users\admin\Desktop\czy_proj\py\cryptocurrency\get_price.py", line 40, in fetch_and_store
+    data = client.simple.price.get(vs_currencies="usd", ids=",".join(coins))
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\resources\simple\price.py", line 128, in get
+    return self._get(
+           ~~~~~~~~~^
+        "/simple/price",
+        ^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+        cast_to=PriceGetResponse,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1215, in get
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1025, in request
+    raise APITimeoutError(request=request) from err
+coingecko_sdk.APITimeoutError: Request timed out.
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1007, in request
+    response = self._client.send(
+        request,
+        stream=stream or self._should_stream_response_body(request=request),
+        **kwargs,
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\anaconda3\envs\env1\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\admin\Desktop\czy_proj\py\cryptocurrency\get_price.py", line 67, in <module>
+    fetch_and_store()
+    ~~~~~~~~~~~~~~~^^
+  File "c:\Users\admin\Desktop\czy_proj\py\cryptocurrency\get_price.py", line 40, in fetch_and_store
+    data = client.simple.price.get(vs_currencies="usd", ids=",".join(coins))
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\resources\simple\price.py", line 128, in get
+    return self._get(
+           ~~~~~~~~~^
+        "/simple/price",
+        ^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+        cast_to=PriceGetResponse,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1215, in get
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1025, in request
+    raise APITimeoutError(request=request) from err
+coingecko_sdk.APITimeoutError: Request timed out.
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1007, in request
+    response = self._client.send(
+        request,
+        stream=stream or self._should_stream_response_body(request=request),
+        **kwargs,
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\anaconda3\envs\env1\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\admin\Desktop\czy_proj\py\cryptocurrency\get_price.py", line 67, in <module>
+    fetch_and_store()
+    ~~~~~~~~~~~~~~~^^
+  File "c:\Users\admin\Desktop\czy_proj\py\cryptocurrency\get_price.py", line 40, in fetch_and_store
+    data = client.simple.price.get(vs_currencies="usd", ids=",".join(coins))
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\resources\simple\price.py", line 128, in get
+    return self._get(
+           ~~~~~~~~~^
+        "/simple/price",
+        ^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+        cast_to=PriceGetResponse,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1215, in get
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1025, in request
+    raise APITimeoutError(request=request) from err
+coingecko_sdk.APITimeoutError: Request timed out.
+16:46:07  bitcoin: $68,726.0
+16:46:07  ethereum: $1,931.43
+Recent prices for bitcoin:
+  2026-11-13 16:46:07 - $68,726.00
+  2026-11-11 16:55:06 - $73,691.00
+  2026-11-11 14:27:44 - $73,750.00
+Recent prices for ethereum:
+  2026-11-13 16:46:07 - $1,931.43
+  2026-11-11 16:55:06 - $2,057.86
+  2026-11-11 14:27:44 - $2,063.62
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1007, in request
+    response = self._client.send(
+        request,
+        stream=stream or self._should_stream_response_body(request=request),
+        **kwargs,
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\anaconda3\envs\env1\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\admin\Desktop\czy_proj\py\cryptocurrency\get_price.py", line 67, in <module>
+    fetch_and_store()
+    ~~~~~~~~~~~~~~~^^
+  File "c:\Users\admin\Desktop\czy_proj\py\cryptocurrency\get_price.py", line 40, in fetch_and_store
+    data = client.simple.price.get(vs_currencies="usd", ids=",".join(coins))
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\resources\simple\price.py", line 128, in get
+    return self._get(
+           ~~~~~~~~~^
+        "/simple/price",
+        ^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+        cast_to=PriceGetResponse,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1215, in get
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda3\envs\env1\Lib\site-packages\coingecko_sdk\_base_client.py", line 1025, in request
+    raise APITimeoutError(request=request) from err
+coingecko_sdk.APITimeoutError: Request timed out.
