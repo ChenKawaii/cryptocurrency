@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
-COINGECKO_API_KEY = os.environ.get("COINGECKO_DEMO_API_KEY")
+COINGECKO_API_KEY = os.environ.get("COINGECKO_DEMO_API_KEY") # CG-Ek4amVAp3KLEu5o3y5Zii4fc
 
 coins = ["bitcoin", "ethereum"]
 
