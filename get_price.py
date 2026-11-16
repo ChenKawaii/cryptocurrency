@@ -1,6 +1,6 @@
 import os
 import time
-import psycopg2
+import psycopg
 from datetime import datetime
 from dotenv import load_dotenv
 from coingecko_sdk import Coingecko
@@ -16,7 +16,7 @@ coins = ["bitcoin", "ethereum"]
 
 
 def get_conn():
-    return psycopg2.connect(DATABASE_URL)
+    return psycopg.connect(DATABASE_URL)
 
 
 def init_db():
