@@ -16,8 +16,13 @@ coins = ["bitcoin", "ethereum"]
 
 
 def get_conn():
-    return psycopg.connect(DATABASE_URL)
-
+    return psycopg.connect(
+        host=os.environ.get("DB_HOST"),
+        port=os.environ.get("DB_PORT"),
+        user=os.environ.get("DB_USER"),
+        password=os.environ.get("DB_PASSWORD"),
+        dbname=os.environ.get("DB_NAME"),
+    )
 
 def init_db():
     conn = get_conn()
