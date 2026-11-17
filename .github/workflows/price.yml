@@ -1,0 +1,42 @@
+
+name: Crypto Price Tracker
+
+on:
+  # 定时执行：每小时运行一次
+  schedule:
+    - cron: "0 * * * *"
+
+  # 允许手动启动
+  workflow_dispatch:
+
+jobs:
+  get-price:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 下载 GitHub 仓库代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 配置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13.11"
+
+      # 3. 安装依赖
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4. 注入环境变量并执行程序
+      - name: Run price tracker
+        env:
+          COINGECKO_DEMO_API_KEY: ${{ secrets.COINGECKO_DEMO_API_KEY }}
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+        run: python get_price.py
